@@ -14,7 +14,7 @@ export default function CTA() {
           <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
 
           {/* Content */}
-          <div className="relative z-10 bg-card/50 backdrop-blur-sm border border-border rounded-3xl p-12 lg:p-16 text-center">
+          <div className="relative z-10 bg-background/50 backdrop-blur-sm border border-border rounded-3xl p-12 lg:p-16 text-center">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-8 text-balance leading-tight">
                 Ready to get{" "}
@@ -64,52 +64,70 @@ export default function CTA() {
 
         {/* Secondary CTAs */}
         <div className="grid md:grid-cols-3 gap-8 mt-20">
-          <div className="text-center p-8 bg-card/30 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-6 h-6 text-blue-600" />
+          <div className="group relative p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:scale-[1.02] text-center">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg">
+                <Calendar className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-foreground transition-colors">Free Consultation</h3>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                Discuss your project requirements with our experts
+              </p>
+              <a
+                href="mailto:hello@cleaniquecoders.com?subject=Free%20Consultation%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20my%20project%20requirements%20with%20your%20experts.%0A%0AProject%20overview%3A%0A-%20Type%20of%20project%3A%20%0A-%20Current%20challenges%3A%20%0A-%20Goals%3A%20%0A-%20Preferred%20meeting%20time%3A%20%0A%0AThank%20you%21"
+                className="text-primary font-medium hover:underline"
+              >
+                Book now →
+              </a>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">Free Consultation</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Discuss your project requirements with our experts
-            </p>
-            <a
-              href="mailto:hello@cleaniquecoders.com?subject=Free%20Consultation%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20my%20project%20requirements%20with%20your%20experts.%0A%0AProject%20overview%3A%0A-%20Type%20of%20project%3A%20%0A-%20Current%20challenges%3A%20%0A-%20Goals%3A%20%0A-%20Preferred%20meeting%20time%3A%20%0A%0AThank%20you%21"
-              className="text-primary font-medium hover:underline"
-            >
-              Book now →
-            </a>
           </div>
 
-          <div className="text-center p-8 bg-card/30 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <MessageCircle className="w-6 h-6 text-green-600" />
+          <div className="group relative p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:scale-[1.02] text-center">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-green-500/5 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg">
+                <MessageCircle className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-foreground transition-colors">Quick Quote</h3>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                Get an estimate for your project in 24 hours
+              </p>
+              <a
+                href="mailto:hello@cleaniquecoders.com?subject=Quick%20Quote%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20get%20a%20quick%20quote%20for%20my%20project.%20Here%20are%20the%20details%3A%0A%0AProject%20description%3A%0A-%20Type%20of%20application%2Fwebsite%3A%20%0A-%20Key%20features%20needed%3A%20%0A-%20Technology%20preferences%3A%20%0A-%20Timeline%3A%20%0A-%20Approximate%20budget%3A%20%0A%0APlease%20provide%20an%20estimate%20within%2024%20hours.%0A%0AThank%20you%21"
+                className="text-primary font-medium hover:underline"
+              >
+                Get quote →
+              </a>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">Quick Quote</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              Get an estimate for your project in 24 hours
-            </p>
-            <a
-              href="mailto:hello@cleaniquecoders.com?subject=Quick%20Quote%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20get%20a%20quick%20quote%20for%20my%20project.%20Here%20are%20the%20details%3A%0A%0AProject%20description%3A%0A-%20Type%20of%20application%2Fwebsite%3A%20%0A-%20Key%20features%20needed%3A%20%0A-%20Technology%20preferences%3A%20%0A-%20Timeline%3A%20%0A-%20Approximate%20budget%3A%20%0A%0APlease%20provide%20an%20estimate%20within%2024%20hours.%0A%0AThank%20you%21"
-              className="text-primary font-medium hover:underline"
-            >
-              Get quote →
-            </a>
           </div>
 
-          <div className="text-center p-8 bg-card/30 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg transition-all duration-300">
-            <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Star className="w-6 h-6 text-purple-600" />
+          <div className="group relative p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden hover:border-primary/50 hover:shadow-2xl hover:scale-[1.02] text-center">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-background/50 backdrop-blur-sm border border-border/50 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-500 group-hover:scale-110 group-hover:shadow-lg">
+                <Star className="w-6 h-6 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-foreground transition-colors">Case Studies</h3>
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                See how we've helped other businesses succeed
+              </p>
+              <a
+                href="mailto:hello@cleaniquecoders.com?subject=Case%20Studies%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20case%20studies%20and%20success%20stories.%20Could%20you%20please%20share%20some%20relevant%20examples%20similar%20to%20my%20industry%20or%20project%20type%3F%0A%0AMy%20project%20context%3A%0A-%20Industry%3A%20%0A-%20Project%20type%3A%20%0A-%20Specific%20challenges%3A%20%0A%0AThank%20you%21"
+                className="text-primary font-medium hover:underline"
+              >
+                View stories →
+              </a>
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">Case Studies</h3>
-            <p className="text-muted-foreground text-sm mb-4">
-              See how we've helped other businesses succeed
-            </p>
-            <a
-              href="mailto:hello@cleaniquecoders.com?subject=Case%20Studies%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20case%20studies%20and%20success%20stories.%20Could%20you%20please%20share%20some%20relevant%20examples%20similar%20to%20my%20industry%20or%20project%20type%3F%0A%0AMy%20project%20context%3A%0A-%20Industry%3A%20%0A-%20Project%20type%3A%20%0A-%20Specific%20challenges%3A%20%0A%0AThank%20you%21"
-              className="text-primary font-medium hover:underline"
-            >
-              View stories →
-            </a>
           </div>
         </div>
       </div>

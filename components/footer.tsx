@@ -16,17 +16,17 @@ const footerLinks = {
     { name: "About Us", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Case Studies", href: "#projects" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
+    // { name: "Blog", href: "/blog" },
+    // { name: "Careers", href: "/careers" },
     { name: "Contact", href: "#contact" }
   ],
   resources: [
     { name: "Documentation", href: "/docs" },
-    { name: "Learning Portal", href: "/learn" },
-    { name: "API Reference", href: "/api" },
-    { name: "Code Samples", href: "/samples" },
-    { name: "Tutorials", href: "/tutorials" },
-    { name: "Community", href: "/community" }
+    // { name: "Learning Portal", href: "/learn" },
+    // { name: "API Reference", href: "/api" },
+    // { name: "Code Samples", href: "/samples" },
+    // { name: "Tutorials", href: "/tutorials" },
+    // { name: "Community", href: "/community" }
   ],
   support: [
     { name: "Help Center", href: "/help" },
@@ -37,10 +37,7 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/cleaniquecoders" },
-  { name: "Github", icon: Github, href: "https://github.com/cleaniquecoders" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com/cleaniquecoders" },
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com/cleaniquecoders" }
+  { name: "Github", icon: Github, href: "https://github.com/cleaniquecoders" }
 ]
 
 export default function Footer() {
@@ -176,8 +173,6 @@ export default function Footer() {
             {/* Copyright */}
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
               <p>&copy; 2025 Cleanique Coders Resources. All rights reserved.</p>
-              <div className="hidden sm:block w-1 h-1 bg-muted-foreground rounded-full" />
-              <p>Powered by Next.js and modern web technologies</p>
             </div>
 
             {/* Legal links */}

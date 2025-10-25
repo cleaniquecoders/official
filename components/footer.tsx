@@ -47,12 +47,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-6 gap-8">
           {/* Brand section */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">CC</span>
-              </div>
-              <span className="font-bold text-xl text-foreground">Cleanique Coders</span>
+          <div className="lg:col-span-2 text-sm">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="font-semibold text-xl text-foreground">Cleanique Coders Resources</span>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               The complete platform for modern software development, IT consulting, and developer training.
@@ -65,7 +62,7 @@ export default function Footer() {
                 href="mailto:hello@cleaniquecoders.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <div className="w-8 h-8 bg-muted/50 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                <div className="w-6 h-6 bg-muted/50 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 hello@cleaniquecoders.com
@@ -74,7 +71,7 @@ export default function Footer() {
                 href="https://cleaniquecoders.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <div className="w-8 h-8 bg-muted/50 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                <div className="w-6 h-6 bg-muted/50 rounded-lg flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <Globe className="w-4 h-4" />
                 </div>
                 cleaniquecoders.com
@@ -89,7 +86,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 bg-muted/50 rounded-lg flex items-center justify-center hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                    className="w-6 h-6 bg-muted/50 rounded-lg flex items-center justify-center hover:bg-primary/10 hover:text-primary transition-all duration-200"
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5" />

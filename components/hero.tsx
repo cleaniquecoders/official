@@ -11,7 +11,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-background to-accent/5" />
 
@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl [animation-delay:2s] animate-pulse" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-7xl mx-auto w-full py-20">
         {/* Announcement banner */}
         <div
           className={`flex justify-center mb-8 transition-all duration-500 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}

@@ -46,8 +46,14 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">CC</span>
+          <div className="w-10 h-10 relative">
+            <Image
+              src="/logo.png"
+              alt="Cleanique Coders Logo"
+              width={40}
+              height={40}
+              className="rounded-xl"
+            />
           </div>
           <div className="hidden sm:block">
             <span className="font-bold text-xl text-foreground">Cleanique Coders</span>

@@ -4,6 +4,7 @@ import Services from "@/components/services"
 import Stats from "@/components/stats"
 import Projects from "@/components/projects"
 import Training from "@/components/training"
+import About from "@/components/about"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Stats />
       <Projects />
       <Training />
+      <About />
       <CTA />
       <Footer />
     </main>

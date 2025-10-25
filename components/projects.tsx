@@ -67,7 +67,7 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -93,14 +93,14 @@ export default function Projects() {
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`group relative p-8 bg-card border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden ${
+              className={`group relative p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden ${
                 hoveredIndex === index
-                  ? "border-primary/50 shadow-2xl scale-[1.02] bg-card/80 backdrop-blur-sm"
+                  ? "border-primary/50 shadow-2xl scale-[1.02]"
                   : "hover:border-border/50 hover:shadow-lg"
               }`}
             >
               {/* Background pattern */}
-              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Content */}
               <div className="relative z-10">
@@ -162,7 +162,7 @@ export default function Projects() {
             {otherProjects.map((project, index) => (
               <div
                 key={index}
-                className="p-6 bg-card/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer"
+                className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-3">
                   <h4 className="text-lg font-semibold text-foreground">

@@ -17,39 +17,39 @@ const services = [
     title: "Solution Architecture",
     description: "Design robust, scalable IT ecosystems that grow with your business.",
     features: ["System Design", "Cloud Architecture", "Performance Optimization", "Security Planning"],
-    color: "from-yellow-500/10 to-orange-600/10",
-    iconColor: "text-orange-600"
+    color: "from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600"
   },
   {
     icon: Shield,
     title: "Code Assessment & QA",
     description: "Comprehensive code review and quality assurance to ensure reliability.",
     features: ["Code Reviews", "Security Audits", "Performance Testing", "Best Practices"],
-    color: "from-green-500/10 to-emerald-600/10",
-    iconColor: "text-emerald-600"
+    color: "from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600"
   },
   {
     icon: BookOpen,
     title: "Developer Training",
     description: "Empower your team with hands-on training and mentorship programs.",
     features: ["Bootcamp Programs", "One-on-One Coaching", "Team Workshops", "Skill Assessment"],
-    color: "from-purple-500/10 to-violet-600/10",
-    iconColor: "text-violet-600"
+    color: "from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600"
   },
   {
     icon: GitBranch,
     title: "Project Migration",
     description: "Seamlessly migrate your applications to modern platforms and technologies.",
     features: ["Legacy Modernization", "Cloud Migration", "Data Transfer", "Zero Downtime"],
-    color: "from-pink-500/10 to-rose-600/10",
-    iconColor: "text-rose-600"
+    color: "from-blue-500/10 to-blue-600/10",
+    iconColor: "text-blue-600"
   },
   {
     icon: FileText,
     title: "Technical Writing",
     description: "Professional documentation and content creation for your technical projects.",
     features: ["API Documentation", "User Guides", "Technical Blogs", "Process Documentation"],
-    color: "from-indigo-500/10 to-blue-600/10",
+    color: "from-blue-500/10 to-blue-600/10",
     iconColor: "text-blue-600"
   },
 ]
@@ -58,13 +58,13 @@ export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-background to-background/50">
+    <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Build it with CCR</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-6">
+            <Sparkles className="w-4 h-4 text-accent" />
+            <span className="text-sm font-medium text-accent">Build it with CCR</span>
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance">
             Complete IT Solutions
@@ -83,9 +83,9 @@ export default function Services() {
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`group relative p-8 bg-card border border-border rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden ${
+                className={`group relative p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden ${
                   hoveredIndex === index
-                    ? "border-primary/50 shadow-2xl scale-[1.02] bg-card/80 backdrop-blur-sm"
+                    ? "border-primary/50 shadow-2xl scale-[1.02]"
                     : "hover:border-border/50 hover:shadow-lg"
                 }`}
               >

@@ -30,7 +30,7 @@ const stats = [
     value: "95%",
     label: "Client Satisfaction",
     description: "Proven track record of success",
-    color: "text-orange-600"
+    color: "text-blue-600"
   }
 ]
 

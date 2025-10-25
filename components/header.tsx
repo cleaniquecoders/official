@@ -33,6 +33,7 @@ export default function Header() {
   const navItems = [
     { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
+    { name: "Open Source", href: "#open-source" },
     { name: "Training", href: "#training" },
     { name: "About", href: "#about" }
   ]

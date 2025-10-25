@@ -1,6 +1,6 @@
 "use client"
 
-import { Users, Lightbulb, Target, ArrowRight, BookOpen, Award, Clock } from "lucide-react"
+import { Users, Lightbulb, Target, ArrowRight, BookOpen, Award, Clock, Globe, Smartphone, Cloud, BarChart3 } from "lucide-react"
 import { useState } from "react"
 
 const programs = [
@@ -40,25 +40,25 @@ const learningPaths = [
   {
     title: "Web Development",
     description: "Master modern web technologies including React, Node.js, and cloud deployment.",
-    icon: "🌐",
+    icon: Globe,
     students: "200+"
   },
   {
     title: "Mobile Development",
     description: "Build native and cross-platform mobile applications with React Native and Flutter.",
-    icon: "📱",
+    icon: Smartphone,
     students: "150+"
   },
   {
     title: "Cloud & DevOps",
     description: "Learn cloud infrastructure, CI/CD pipelines, and modern deployment strategies.",
-    icon: "☁️",
+    icon: Cloud,
     students: "100+"
   },
   {
     title: "Data Science",
     description: "Dive into data analysis, machine learning, and AI with Python and modern tools.",
-    icon: "📊",
+    icon: BarChart3,
     students: "80+"
   }
 ]
@@ -170,23 +170,28 @@ export default function Training() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {learningPaths.map((path, index) => (
-              <div
-                key={index}
-                className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer text-center"
-              >
-                <div className="text-4xl mb-4">{path.icon}</div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">
-                  {path.title}
-                </h4>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {path.description}
-                </p>
-                <div className="text-xs text-primary font-medium">
-                  {path.students} students enrolled
+            {learningPaths.map((path, index) => {
+              const Icon = path.icon
+              return (
+                <div
+                  key={index}
+                  className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer text-center"
+                >
+                  <div className="flex justify-center mb-4">
+                    <Icon className="w-10 h-10 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                    {path.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {path.description}
+                  </p>
+                  <div className="text-xs text-primary font-medium">
+                    {path.students} students enrolled
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
 

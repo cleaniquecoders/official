@@ -86,10 +86,13 @@ export default function Header() {
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
 
-          <button className="group px-6 py-2.5 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 font-semibold flex items-center gap-2">
+          <a
+            href="mailto:hello@cleaniquecoders.com?subject=Get%20Started%20-%20Project%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20interested%20in%20getting%20started%20with%20a%20project.%20Could%20we%20schedule%20a%20consultation%20to%20discuss%20my%20requirements%3F%0A%0ABest%20regards"
+            className="group px-6 py-2.5 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 font-semibold flex items-center gap-2"
+          >
             Get Started
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </button>
+          </a>
         </div>
 
         {/* Mobile Actions */}
@@ -126,10 +129,13 @@ export default function Header() {
                   </a>
                 ))}
                 <div className="pt-4">
-                  <button className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all font-semibold flex items-center justify-center gap-2">
+                  <a
+                    href="mailto:hello@cleaniquecoders.com?subject=Get%20Started%20-%20Project%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20interested%20in%20getting%20started%20with%20a%20project.%20Could%20we%20schedule%20a%20consultation%20to%20discuss%20my%20requirements%3F%0A%0ABest%20regards"
+                    className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all font-semibold flex items-center justify-center gap-2"
+                  >
                     Get Started
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

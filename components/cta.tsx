@@ -29,16 +29,22 @@ export default function CTA() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                <button className="group px-10 py-5 bg-primary text-primary-foreground rounded-2xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3">
+                <a
+                  href="mailto:hello@cleaniquecoders.com?subject=Schedule%20Consultation%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20schedule%20a%20consultation%20to%20discuss%20my%20project%20requirements.%20Please%20let%20me%20know%20your%20available%20times.%0A%0AProject%20details%3A%0A-%20Industry%3A%20%0A-%20Project%20type%3A%20%0A-%20Timeline%3A%20%0A-%20Budget%20range%3A%20%0A%0AThank%20you%21"
+                  className="group px-10 py-5 bg-primary text-primary-foreground rounded-2xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3"
+                >
                   <Calendar className="w-6 h-6" />
                   Schedule Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </a>
 
-                <button className="group px-10 py-5 border-2 border-border bg-background/50 backdrop-blur-sm text-foreground rounded-2xl hover:bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3">
+                <a
+                  href="mailto:hello@cleaniquecoders.com?subject=Let's%20Chat%20-%20General%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'd%20like%20to%20chat%20about%20your%20services%20and%20how%20you%20might%20be%20able%20to%20help%20with%20my%20project.%0A%0APlease%20let%20me%20know%20the%20best%20way%20to%20get%20in%20touch.%0A%0ABest%20regards"
+                  className="group px-10 py-5 border-2 border-border bg-background/50 backdrop-blur-sm text-foreground rounded-2xl hover:bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3"
+                >
                   <MessageCircle className="w-6 h-6" />
                   Let's Chat
-                </button>
+                </a>
               </div>
 
               {/* Contact info */}
@@ -66,9 +72,12 @@ export default function CTA() {
             <p className="text-muted-foreground text-sm mb-4">
               Discuss your project requirements with our experts
             </p>
-            <button className="text-primary font-medium hover:underline">
+            <a
+              href="mailto:hello@cleaniquecoders.com?subject=Free%20Consultation%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20my%20project%20requirements%20with%20your%20experts.%0A%0AProject%20overview%3A%0A-%20Type%20of%20project%3A%20%0A-%20Current%20challenges%3A%20%0A-%20Goals%3A%20%0A-%20Preferred%20meeting%20time%3A%20%0A%0AThank%20you%21"
+              className="text-primary font-medium hover:underline"
+            >
               Book now →
-            </button>
+            </a>
           </div>
 
           <div className="text-center p-8 bg-card/30 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg transition-all duration-300">
@@ -79,9 +88,12 @@ export default function CTA() {
             <p className="text-muted-foreground text-sm mb-4">
               Get an estimate for your project in 24 hours
             </p>
-            <button className="text-primary font-medium hover:underline">
+            <a
+              href="mailto:hello@cleaniquecoders.com?subject=Quick%20Quote%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI%20would%20like%20to%20get%20a%20quick%20quote%20for%20my%20project.%20Here%20are%20the%20details%3A%0A%0AProject%20description%3A%0A-%20Type%20of%20application%2Fwebsite%3A%20%0A-%20Key%20features%20needed%3A%20%0A-%20Technology%20preferences%3A%20%0A-%20Timeline%3A%20%0A-%20Approximate%20budget%3A%20%0A%0APlease%20provide%20an%20estimate%20within%2024%20hours.%0A%0AThank%20you%21"
+              className="text-primary font-medium hover:underline"
+            >
               Get quote →
-            </button>
+            </a>
           </div>
 
           <div className="text-center p-8 bg-card/30 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg transition-all duration-300">
@@ -92,9 +104,12 @@ export default function CTA() {
             <p className="text-muted-foreground text-sm mb-4">
               See how we've helped other businesses succeed
             </p>
-            <button className="text-primary font-medium hover:underline">
+            <a
+              href="mailto:hello@cleaniquecoders.com?subject=Case%20Studies%20Request&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20your%20case%20studies%20and%20success%20stories.%20Could%20you%20please%20share%20some%20relevant%20examples%20similar%20to%20my%20industry%20or%20project%20type%3F%0A%0AMy%20project%20context%3A%0A-%20Industry%3A%20%0A-%20Project%20type%3A%20%0A-%20Specific%20challenges%3A%20%0A%0AThank%20you%21"
+              className="text-primary font-medium hover:underline"
+            >
               View stories →
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -29,7 +29,6 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-full backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-foreground">Trusted by 50+ companies since 2016</span>
-            <ArrowRight className="w-4 h-4 text-primary" />
           </div>
         </div>
 
@@ -50,20 +49,6 @@ export default function Hero() {
             The complete platform for modern software development, IT consulting, and developer training.
             Trusted by businesses to build scalable solutions that drive growth.
           </p>
-
-          {/* CTA buttons */}
-          <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 [animation-delay:0.3s] ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
-          >
-            <button className="group px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-2">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="group px-8 py-4 border-2 border-border bg-card/50 backdrop-blur-sm text-foreground rounded-xl hover:bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-2">
-              <Play className="w-5 h-5" />
-              Watch Demo
-            </button>
-          </div>
 
           {/* Support text */}
           <div

@@ -1,6 +1,7 @@
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
+import Stats from "@/components/stats"
 import Projects from "@/components/projects"
 import Training from "@/components/training"
 import CTA from "@/components/cta"
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
+      <Stats />
       <Projects />
       <Training />
       <CTA />

@@ -44,20 +44,11 @@ export default function Header() {
         ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg"
         : "bg-background/80 backdrop-blur-sm"
     }`}>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 relative">
-            <Image
-              src="/logo.png"
-              alt="Cleanique Coders Logo"
-              width={40}
-              height={40}
-              className="rounded-xl"
-            />
-          </div>
           <div className="hidden sm:block">
-            <span className="font-bold text-xl text-foreground">Cleanique Coders</span>
+            <span className="font-semibold text-xl text-foreground">Cleanique Coders</span>
             <div className="text-xs text-muted-foreground -mt-1">Since 2016</div>
           </div>
         </div>

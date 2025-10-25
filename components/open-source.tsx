@@ -285,28 +285,6 @@ export default function OpenSource() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-background/50 backdrop-blur-sm border border-border rounded-3xl p-12 mb-20">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">96+</div>
-              <div className="text-muted-foreground">Open Source Packages</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">100+</div>
-              <div className="text-muted-foreground">GitHub Stars</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">MIT</div>
-              <div className="text-muted-foreground">Licensed</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-primary mb-2">Active</div>
-              <div className="text-muted-foreground">Maintenance</div>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom CTA */}
         <div className="text-center">
           <p className="text-muted-foreground mb-6">

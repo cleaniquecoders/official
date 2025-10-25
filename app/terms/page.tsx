@@ -1,7 +1,6 @@
 "use client"
 
 import { Scale, FileText, Users, AlertTriangle, Clock, Mail, Shield, CheckCircle } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const termsSection = [
   {
@@ -116,28 +115,26 @@ export default function TermsOfService() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Introduction */}
         <div className="mb-16">
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Agreement Overview</h2>
-              <div className="prose prose-gray max-w-none text-muted-foreground space-y-4">
-                <p>
-                  These Terms of Service ("Terms") constitute a legally binding agreement between you ("Client," "you," or "your")
-                  and Cleanique Coders Resources Sdn Bhd ("Company," "we," "our," or "us") regarding your use of our software
-                  development, IT consulting, and related services.
-                </p>
-                <p>
-                  By engaging our services, submitting a project request, or signing a service agreement, you acknowledge that
-                  you have read, understood, and agree to be bound by these Terms. These Terms apply to all services provided,
-                  including but not limited to software development, consulting, training, and support services.
-                </p>
-                <p>
-                  If you do not agree with any part of these Terms, please do not use our services. We reserve the right to
-                  modify these Terms at any time, and continued use of our services after changes constitutes acceptance of
-                  the updated Terms.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Agreement Overview</h2>
+            <div className="prose prose-gray max-w-none text-muted-foreground space-y-4">
+              <p>
+                These Terms of Service ("Terms") constitute a legally binding agreement between you ("Client," "you," or "your")
+                and Cleanique Coders Resources Sdn Bhd ("Company," "we," "our," or "us") regarding your use of our software
+                development, IT consulting, and related services.
+              </p>
+              <p>
+                By engaging our services, submitting a project request, or signing a service agreement, you acknowledge that
+                you have read, understood, and agree to be bound by these Terms. These Terms apply to all services provided,
+                including but not limited to software development, consulting, training, and support services.
+              </p>
+              <p>
+                If you do not agree with any part of these Terms, please do not use our services. We reserve the right to
+                modify these Terms at any time, and continued use of our services after changes constitutes acceptance of
+                the updated Terms.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Main Terms Sections */}
@@ -145,26 +142,25 @@ export default function TermsOfService() {
           {termsSection.map((section, index) => {
             const Icon = section.icon
             return (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
+              <div key={index} className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
                     {section.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {section.content.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                  </h3>
+                </div>
+
+                <ul className="space-y-3">
+                  {section.content.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )
           })}
         </div>
@@ -174,152 +170,148 @@ export default function TermsOfService() {
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Payment Terms</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {paymentTerms.map((term, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <CardTitle className="text-lg">{term.title}</CardTitle>
-                  <CardDescription>{term.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {term.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div key={index} className="h-full p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+                <div className="mb-4">
+                  <h4 className="text-lg font-bold text-foreground mb-2">{term.title}</h4>
+                  <p className="text-sm text-muted-foreground">{term.description}</p>
+                </div>
+
+                <ul className="space-y-2">
+                  {term.details.map((detail, detailIndex) => (
+                    <li key={detailIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Project Terms */}
         <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Clock className="w-5 h-5 text-primary" />
                 </div>
                 Project Terms & Delivery
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Project Scope</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <li>• Detailed project scope defined in written agreements</li>
-                    <li>• Changes require written approval and may affect timeline/cost</li>
-                    <li>• Scope creep managed through formal change request process</li>
-                    <li>• Clear deliverables and acceptance criteria established</li>
-                  </ul>
+              </h3>
+            </div>
 
-                  <h4 className="font-semibold text-foreground mb-3">Timeline & Delivery</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Realistic timelines based on project complexity</li>
-                    <li>• Regular progress updates and milestone reviews</li>
-                    <li>• Client delays may impact overall project timeline</li>
-                    <li>• Force majeure events may affect delivery schedules</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Quality Assurance</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground mb-6">
-                    <li>• Comprehensive testing before delivery</li>
-                    <li>• 30-day warranty for bug fixes on delivered code</li>
-                    <li>• Code follows industry best practices and standards</li>
-                    <li>• Documentation provided for all custom development</li>
-                  </ul>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Project Scope</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                  <li>• Detailed project scope defined in written agreements</li>
+                  <li>• Changes require written approval and may affect timeline/cost</li>
+                  <li>• Scope creep managed through formal change request process</li>
+                  <li>• Clear deliverables and acceptance criteria established</li>
+                </ul>
 
-                  <h4 className="font-semibold text-foreground mb-3">Support & Maintenance</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Optional ongoing support agreements available</li>
-                    <li>• Emergency support for critical issues</li>
-                    <li>• Regular maintenance and security updates</li>
-                    <li>• Performance monitoring and optimization</li>
-                  </ul>
-                </div>
+                <h4 className="font-semibold text-foreground mb-3">Timeline & Delivery</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Realistic timelines based on project complexity</li>
+                  <li>• Regular progress updates and milestone reviews</li>
+                  <li>• Client delays may impact overall project timeline</li>
+                  <li>• Force majeure events may affect delivery schedules</li>
+                </ul>
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Quality Assurance</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground mb-6">
+                  <li>• Comprehensive testing before delivery</li>
+                  <li>• 30-day warranty for bug fixes on delivered code</li>
+                  <li>• Code follows industry best practices and standards</li>
+                  <li>• Documentation provided for all custom development</li>
+                </ul>
+
+                <h4 className="font-semibold text-foreground mb-3">Support & Maintenance</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Optional ongoing support agreements available</li>
+                  <li>• Emergency support for critical issues</li>
+                  <li>• Regular maintenance and security updates</li>
+                  <li>• Performance monitoring and optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Termination */}
         <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Termination & Cancellation</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Client Termination</h4>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Clients may terminate services with 30 days written notice. Payment is required for all work completed
-                    up to the termination date, including any costs incurred for the project.
-                  </p>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Termination & Cancellation</h3>
 
-                  <h4 className="font-semibold text-foreground mb-3">Company Termination</h4>
-                  <p className="text-sm text-muted-foreground">
-                    We may terminate services immediately for non-payment, breach of terms, or if continuing the relationship
-                    would be detrimental to either party.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Post-Termination</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• All outstanding payments become immediately due</li>
-                    <li>• Client retains ownership of completed deliverables</li>
-                    <li>• Confidentiality obligations survive termination</li>
-                    <li>• Return or destruction of confidential materials</li>
-                    <li>• Access to systems and accounts will be revoked</li>
-                  </ul>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Client Termination</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Clients may terminate services with 30 days written notice. Payment is required for all work completed
+                  up to the termination date, including any costs incurred for the project.
+                </p>
+
+                <h4 className="font-semibold text-foreground mb-3">Company Termination</h4>
+                <p className="text-sm text-muted-foreground">
+                  We may terminate services immediately for non-payment, breach of terms, or if continuing the relationship
+                  would be detrimental to either party.
+                </p>
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Post-Termination</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• All outstanding payments become immediately due</li>
+                  <li>• Client retains ownership of completed deliverables</li>
+                  <li>• Confidentiality obligations survive termination</li>
+                  <li>• Return or destruction of confidential materials</li>
+                  <li>• Access to systems and accounts will be revoked</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Governing Law */}
         <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Governing Law & Jurisdiction</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  These Terms are governed by and construed in accordance with the laws of Malaysia. Any disputes arising
-                  from or related to these Terms or our services shall be subject to the exclusive jurisdiction of the
-                  courts of Malaysia.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Dispute Resolution</h4>
-                    <p className="text-sm">
-                      We encourage resolving disputes through good faith negotiation. If unsuccessful, disputes will be
-                      resolved through binding arbitration under Malaysian Arbitration Act 2005.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Severability</h4>
-                    <p className="text-sm">
-                      If any provision of these Terms is found unenforceable, the remaining provisions shall remain in
-                      full force and effect.
-                    </p>
-                  </div>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Governing Law & Jurisdiction</h3>
+
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                These Terms are governed by and construed in accordance with the laws of Malaysia. Any disputes arising
+                from or related to these Terms or our services shall be subject to the exclusive jurisdiction of the
+                courts of Malaysia.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Dispute Resolution</h4>
+                  <p className="text-sm">
+                    We encourage resolving disputes through good faith negotiation. If unsuccessful, disputes will be
+                    resolved through binding arbitration under Malaysian Arbitration Act 2005.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Severability</h4>
+                  <p className="text-sm">
+                    If any provision of these Terms is found unenforceable, the remaining provisions shall remain in
+                    full force and effect.
+                  </p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         {/* Contact */}
         <div>
-          <Card className="bg-linear-to-br from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8 text-center">
+          <div className="relative overflow-hidden p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl text-center">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 opacity-100" />
+
+            {/* Content */}
+            <div className="relative z-10">
               <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Questions About These Terms?
@@ -339,8 +331,8 @@ export default function TermsOfService() {
                 <p>Cleanique Coders Resources Sdn Bhd</p>
                 <p>Registration No: 201603028084 (002507773-X)</p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>

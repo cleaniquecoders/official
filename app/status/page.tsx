@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Activity, CheckCircle, AlertTriangle, XCircle, Clock, TrendingUp, Server, Database, Globe, Zap } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 interface ServiceStatus {
@@ -166,23 +165,21 @@ export default function SystemStatus() {
 
             {/* Overall Status */}
             <div className="max-w-md mx-auto">
-              <Card className={`border-2 ${overallStatus === "operational" ? "border-green-200 bg-green-50/50" : "border-yellow-200 bg-yellow-50/50"}`}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-center gap-3">
-                    {overallStatus === "operational" ? (
-                      <CheckCircle className="w-6 h-6 text-green-500" />
-                    ) : (
-                      <AlertTriangle className="w-6 h-6 text-yellow-500" />
-                    )}
-                    <span className="text-lg font-semibold text-foreground">
-                      {overallStatus === "operational" ? "All Systems Operational" : "Some Issues Detected"}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Last updated: {currentTime.toLocaleString()}
-                  </p>
-                </CardContent>
-              </Card>
+              <div className={`p-6 border-2 rounded-3xl bg-background/50 backdrop-blur-sm ${overallStatus === "operational" ? "border-green-200" : "border-yellow-200"}`}>
+                <div className="flex items-center justify-center gap-3">
+                  {overallStatus === "operational" ? (
+                    <CheckCircle className="w-6 h-6 text-green-500" />
+                  ) : (
+                    <AlertTriangle className="w-6 h-6 text-yellow-500" />
+                  )}
+                  <span className="text-lg font-semibold text-foreground">
+                    {overallStatus === "operational" ? "All Systems Operational" : "Some Issues Detected"}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2 text-center">
+                  Last updated: {currentTime.toLocaleString()}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -197,36 +194,34 @@ export default function SystemStatus() {
             {services.map((service, index) => {
               const StatusIcon = getStatusIcon(service.status)
               return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className={`w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors`}>
-                          <StatusIcon className={`w-5 h-5 ${getStatusColor(service.status)}`} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-foreground">{service.name}</h3>
-                          <p className="text-sm text-muted-foreground">{service.description}</p>
-                        </div>
+                <div key={index} className="group p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-10 h-10 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors`}>
+                        <StatusIcon className={`w-5 h-5 ${getStatusColor(service.status)}`} />
                       </div>
-                      <div className="flex items-center gap-6">
-                        <div className="text-right">
-                          <div className="text-sm text-muted-foreground">Uptime</div>
-                          <div className="font-medium text-foreground">{service.uptime}</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-sm text-muted-foreground">Response</div>
-                          <div className="font-medium text-foreground">{service.responseTime}</div>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-sm text-muted-foreground">Last Checked</div>
-                          <div className="font-medium text-foreground">{service.lastChecked}</div>
-                        </div>
-                        {getStatusBadge(service.status)}
+                      <div>
+                        <h3 className="font-semibold text-foreground">{service.name}</h3>
+                        <p className="text-sm text-muted-foreground">{service.description}</p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex items-center gap-6">
+                      <div className="text-right">
+                        <div className="text-sm text-muted-foreground">Uptime</div>
+                        <div className="font-medium text-foreground">{service.uptime}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm text-muted-foreground">Response</div>
+                        <div className="font-medium text-foreground">{service.responseTime}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-sm text-muted-foreground">Last Checked</div>
+                        <div className="font-medium text-foreground">{service.lastChecked}</div>
+                      </div>
+                      {getStatusBadge(service.status)}
+                    </div>
+                  </div>
+                </div>
               )
             })}
           </div>
@@ -234,61 +229,53 @@ export default function SystemStatus() {
 
         {/* Performance Metrics */}
         <div className="grid md:grid-cols-4 gap-6 mb-16">
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-foreground">99.98%</div>
-                  <div className="text-sm text-muted-foreground">Overall Uptime</div>
-                </div>
+          <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-green-600" />
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <div className="text-2xl font-bold text-foreground">99.98%</div>
+                <div className="text-sm text-muted-foreground">Overall Uptime</div>
+              </div>
+            </div>
+          </div>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-blue-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-foreground">172ms</div>
-                  <div className="text-sm text-muted-foreground">Avg Response</div>
-                </div>
+          <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                <Zap className="w-5 h-5 text-blue-600" />
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <div className="text-2xl font-bold text-foreground">172ms</div>
+                <div className="text-sm text-muted-foreground">Avg Response</div>
+              </div>
+            </div>
+          </div>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                  <Server className="w-5 h-5 text-purple-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-foreground">4</div>
-                  <div className="text-sm text-muted-foreground">Services</div>
-                </div>
+          <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
+                <Server className="w-5 h-5 text-purple-600" />
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <div className="text-2xl font-bold text-foreground">4</div>
+                <div className="text-sm text-muted-foreground">Services</div>
+              </div>
+            </div>
+          </div>
 
-          <Card>
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-orange-600" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-foreground">0</div>
-                  <div className="text-sm text-muted-foreground">Active Incidents</div>
-                </div>
+          <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-orange-600" />
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <div className="text-2xl font-bold text-foreground">0</div>
+                <div className="text-sm text-muted-foreground">Active Incidents</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Recent Incidents */}
@@ -297,44 +284,39 @@ export default function SystemStatus() {
           {recentIncidents.length > 0 ? (
             <div className="space-y-4">
               {recentIncidents.map((incident) => (
-                <Card key={incident.id}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-lg">{incident.title}</CardTitle>
-                        <CardDescription>
-                          Created: {formatDate(incident.created)} • Updated: {formatDate(incident.updated)}
-                        </CardDescription>
-                      </div>
-                      <div className="flex gap-2">
-                        {getIncidentBadge(incident.impact)}
-                        <Badge variant={incident.status === "resolved" ? "default" : "secondary"}>
-                          {incident.status.charAt(0).toUpperCase() + incident.status.slice(1)}
-                        </Badge>
-                      </div>
+                <div key={incident.id} className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-lg font-semibold">{incident.title}</h3>
+                      <p className="text-muted-foreground text-sm">
+                        Created: {formatDate(incident.created)} • Updated: {formatDate(incident.updated)}
+                      </p>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{incident.description}</p>
-                  </CardContent>
-                </Card>
+                    <div className="flex gap-2">
+                      {getIncidentBadge(incident.impact)}
+                      <Badge variant={incident.status === "resolved" ? "default" : "secondary"}>
+                        {incident.status.charAt(0).toUpperCase() + incident.status.slice(1)}
+                      </Badge>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground">{incident.description}</p>
+                </div>
               ))}
             </div>
           ) : (
-            <Card>
-              <CardContent className="p-8 text-center">
-                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">No Recent Incidents</h3>
-                <p className="text-muted-foreground">All systems are running smoothly with no reported issues in the past 30 days.</p>
-              </CardContent>
-            </Card>
+            <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-2xl text-center">
+              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-foreground mb-2">No Recent Incidents</h3>
+              <p className="text-muted-foreground">All systems are running smoothly with no reported issues in the past 30 days.</p>
+            </div>
           )}
         </div>
 
         {/* Subscribe to Updates */}
         <div className="text-center">
-          <Card className="bg-linear-to-br from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8">
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 rounded-3xl" />
+            <div className="relative">
               <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Stay Updated
@@ -350,8 +332,8 @@ export default function SystemStatus() {
                   Subscribe to Updates
                 </a>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>

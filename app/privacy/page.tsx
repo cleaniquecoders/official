@@ -1,7 +1,6 @@
 "use client"
 
 import { Shield, Eye, Lock, Users, Database, Globe, Mail, FileText } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const privacySections = [
   {
@@ -85,27 +84,25 @@ export default function PrivacyPolicy() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Introduction */}
         <div className="mb-16">
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-foreground mb-4">Introduction</h2>
-              <div className="prose prose-gray max-w-none text-muted-foreground space-y-4">
-                <p>
-                  Cleanique Coders Resources Sdn Bhd ("we," "our," or "us") is committed to protecting your privacy and personal information.
-                  This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website,
-                  use our services, or interact with us.
-                </p>
-                <p>
-                  As a software development and IT consulting company, we understand the importance of data privacy and security.
-                  We are committed to maintaining the highest standards of data protection in accordance with applicable privacy laws
-                  and regulations.
-                </p>
-                <p>
-                  By using our services or website, you agree to the collection and use of information in accordance with this policy.
-                  If you do not agree with our policies and practices, please do not use our services.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Introduction</h2>
+            <div className="prose prose-gray max-w-none text-muted-foreground space-y-4">
+              <p>
+                Cleanique Coders Resources Sdn Bhd ("we," "our," or "us") is committed to protecting your privacy and personal information.
+                This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website,
+                use our services, or interact with us.
+              </p>
+              <p>
+                As a software development and IT consulting company, we understand the importance of data privacy and security.
+                We are committed to maintaining the highest standards of data protection in accordance with applicable privacy laws
+                and regulations.
+              </p>
+              <p>
+                By using our services or website, you agree to the collection and use of information in accordance with this policy.
+                If you do not agree with our policies and practices, please do not use our services.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Privacy Sections */}
@@ -113,109 +110,108 @@ export default function PrivacyPolicy() {
           {privacySections.map((section, index) => {
             const Icon = section.icon
             return (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
+              <div key={index} className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
                     {section.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {section.content.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                  </h3>
+                </div>
+
+                <ul className="space-y-3">
+                  {section.content.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-3 text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )
           })}
         </div>
 
         {/* Your Rights */}
         <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <FileText className="w-5 h-5 text-primary" />
                 </div>
                 Your Rights
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Access & Correction</h4>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    You have the right to access, update, or correct your personal information at any time.
-                  </p>
+              </h3>
+            </div>
 
-                  <h4 className="font-semibold text-foreground mb-3">Data Portability</h4>
-                  <p className="text-sm text-muted-foreground">
-                    You can request a copy of your personal data in a structured, machine-readable format.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-3">Deletion</h4>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    You can request deletion of your personal information, subject to legal and contractual obligations.
-                  </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Access & Correction</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  You have the right to access, update, or correct your personal information at any time.
+                </p>
 
-                  <h4 className="font-semibold text-foreground mb-3">Opt-out</h4>
-                  <p className="text-sm text-muted-foreground">
-                    You can opt-out of marketing communications at any time through unsubscribe links or by contacting us.
-                  </p>
-                </div>
+                <h4 className="font-semibold text-foreground mb-3">Data Portability</h4>
+                <p className="text-sm text-muted-foreground">
+                  You can request a copy of your personal data in a structured, machine-readable format.
+                </p>
               </div>
-            </CardContent>
-          </Card>
+              <div>
+                <h4 className="font-semibold text-foreground mb-3">Deletion</h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  You can request deletion of your personal information, subject to legal and contractual obligations.
+                </p>
+
+                <h4 className="font-semibold text-foreground mb-3">Opt-out</h4>
+                <p className="text-sm text-muted-foreground">
+                  You can opt-out of marketing communications at any time through unsubscribe links or by contacting us.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Data Retention */}
         <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Data Retention</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  We retain your personal information only for as long as necessary to fulfill the purposes outlined in this
-                  Privacy Policy, unless a longer retention period is required or permitted by law.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Active Projects</h4>
-                    <p className="text-sm">Information retained throughout project duration and 7 years after completion for legal and tax purposes.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Marketing Data</h4>
-                    <p className="text-sm">Marketing communications data retained until you opt-out or request deletion.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Website Analytics</h4>
-                    <p className="text-sm">Anonymous analytics data retained for 26 months to improve our services.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Support Records</h4>
-                    <p className="text-sm">Support and communication records retained for 3 years for quality assurance.</p>
-                  </div>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Data Retention</h3>
+
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                We retain your personal information only for as long as necessary to fulfill the purposes outlined in this
+                Privacy Policy, unless a longer retention period is required or permitted by law.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Active Projects</h4>
+                  <p className="text-sm">Information retained throughout project duration and 7 years after completion for legal and tax purposes.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Marketing Data</h4>
+                  <p className="text-sm">Marketing communications data retained until you opt-out or request deletion.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Website Analytics</h4>
+                  <p className="text-sm">Anonymous analytics data retained for 26 months to improve our services.</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2">Support Records</h4>
+                  <p className="text-sm">Support and communication records retained for 3 years for quality assurance.</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         {/* Contact Information */}
         <div className="mb-16">
-          <Card className="bg-linear-to-br from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8">
+          <div className="relative overflow-hidden p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 opacity-100" />
+
+            {/* Content */}
+            <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <Mail className="w-8 h-8 text-primary" />
                 <div>
@@ -249,26 +245,24 @@ export default function PrivacyPolicy() {
                   For urgent privacy concerns, please include "URGENT" in your email subject line.
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         {/* Policy Updates */}
         <div>
-          <Card>
-            <CardContent className="p-8 text-center">
-              <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-foreground mb-4">Policy Updates</h3>
-              <p className="text-muted-foreground mb-4">
-                We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational,
-                legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page
-                and updating the "Last updated" date.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl text-center">
+            <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-foreground mb-4">Policy Updates</h3>
+            <p className="text-muted-foreground mb-4">
+              We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational,
+              legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page
+              and updating the "Last updated" date.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { HelpCircle, Search, MessageCircle, Book, Phone, Mail, ChevronRight, ExternalLink, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
@@ -118,7 +117,7 @@ export default function HelpCenter() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-br from-primary/5 to-primary/10 border-b border-border">
+      <div className="bg-linear-to-br from-primary/5 to-primary/10 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-background/50 backdrop-blur-sm border border-border rounded-full mb-6">
@@ -154,27 +153,25 @@ export default function HelpCenter() {
           {helpCategories.map((category, index) => {
             const Icon = category.icon
             return (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <CardHeader>
+              <div key={index} className="group p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer">
+                <div className="mb-4">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors">
                       <Icon className={`w-5 h-5 ${category.color}`} />
                     </div>
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                    <h3 className="text-lg font-semibold">{category.title}</h3>
                   </div>
-                  <CardDescription>{category.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {category.articles.map((article, articleIndex) => (
-                      <div key={articleIndex} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1 cursor-pointer">
-                        <ChevronRight className="w-3 h-3" />
-                        {article}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  <p className="text-muted-foreground">{category.description}</p>
+                </div>
+                <div className="space-y-2">
+                  {category.articles.map((article, articleIndex) => (
+                    <div key={articleIndex} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-1 cursor-pointer">
+                      <ChevronRight className="w-3 h-3" />
+                      {article}
+                    </div>
+                  ))}
+                </div>
+              </div>
             )
           })}
         </div>
@@ -221,22 +218,20 @@ export default function HelpCenter() {
             {contactMethods.map((method, index) => {
               const Icon = method.icon
               return (
-                <Card key={index} className="group hover:shadow-lg transition-all duration-300 text-center">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{method.title}</h3>
-                    <p className="text-muted-foreground mb-4">{method.description}</p>
-                    <p className="text-sm text-muted-foreground mb-6">{method.response}</p>
-                    <Button asChild className="w-full">
-                      <a href={method.href}>
-                        {method.action}
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
+                <div key={index} className="group p-8 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                    <Icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{method.title}</h3>
+                  <p className="text-muted-foreground mb-4">{method.description}</p>
+                  <p className="text-sm text-muted-foreground mb-6">{method.response}</p>
+                  <Button asChild className="w-full">
+                    <a href={method.href}>
+                      {method.action}
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </a>
+                  </Button>
+                </div>
               )
             })}
           </div>
@@ -244,8 +239,9 @@ export default function HelpCenter() {
 
         {/* Still Need Help */}
         <div className="text-center">
-          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8">
+          <div className="p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 rounded-3xl" />
+            <div className="relative">
               <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Still can't find what you're looking for?
@@ -259,8 +255,8 @@ export default function HelpCenter() {
                   <ChevronRight className="w-4 h-4 ml-2" />
                 </a>
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>

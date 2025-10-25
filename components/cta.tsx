@@ -40,7 +40,7 @@ export default function CTA() {
 
                 <a
                   href="mailto:hello@cleaniquecoders.com?subject=Let's%20Chat%20-%20General%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'd%20like%20to%20chat%20about%20your%20services%20and%20how%20you%20might%20be%20able%20to%20help%20with%20my%20project.%0A%0APlease%20let%20me%20know%20the%20best%20way%20to%20get%20in%20touch.%0A%0ABest%20regards"
-                  className="group px-10 py-5 border-2 border-border bg-background/50 backdrop-blur-sm text-foreground rounded-2xl hover:bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3"
+                  className="group px-10 py-5 border-2 border-border bg-background/50 backdrop-blur-sm text-foreground rounded-2xl hover:bg-background/70 hover:border-primary/50 hover:shadow-lg transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-3"
                 >
                   <MessageCircle className="w-6 h-6" />
                   Let's Chat

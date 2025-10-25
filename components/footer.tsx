@@ -21,7 +21,6 @@ const footerLinks = {
     { name: "Contact", href: "#contact" }
   ],
   resources: [
-    { name: "Documentation", href: "/docs" },
     // { name: "Learning Portal", href: "/learn" },
     // { name: "API Reference", href: "/api" },
     // { name: "Code Samples", href: "/samples" },
@@ -29,10 +28,11 @@ const footerLinks = {
     // { name: "Community", href: "/community" }
   ],
   support: [
+    // { name: "Documentation", href: "/docs" },
     { name: "Help Center", href: "/help" },
-    { name: "Contact Support", href: "/support" },
-    { name: "System Status", href: "/status" },
-    { name: "Feedback", href: "/feedback" }
+    // { name: "Contact Support", href: "/support" },
+    // { name: "System Status", href: "/status" },
+    // { name: "Feedback", href: "/feedback" }
   ]
 }
 
@@ -129,7 +129,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold text-foreground mb-4">Resources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
@@ -143,7 +143,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="font-semibold text-foreground mb-4">Support</h4>

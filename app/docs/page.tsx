@@ -2,7 +2,6 @@
 
 import { Book, Code, Download, ExternalLink, FileText, Lightbulb, Search, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 
 const documentationSections = [
@@ -87,7 +86,7 @@ export default function Documentation() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-br from-primary/5 to-primary/10 border-b border-border">
+      <div className="bg-linear-to-br from-primary/5 to-primary/10 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-background/50 backdrop-blur-sm border border-border rounded-full mb-6">
@@ -121,30 +120,29 @@ export default function Documentation() {
           {documentationSections.map((section, index) => {
             const Icon = section.icon
             return (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <CardHeader>
+              <div key={index} className="group p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer">
+                <div className="mb-4">
                   <div className="flex items-center gap-3 mb-2">
                     <div className={`w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors`}>
                       <Icon className={`w-5 h-5 ${section.color}`} />
                     </div>
-                    <CardTitle className="text-lg">{section.title}</CardTitle>
+                    <h3 className="text-lg font-bold text-foreground">{section.title}</h3>
                   </div>
-                  <CardDescription>{section.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    {section.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href={link.href}
-                        className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1"
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  <p className="text-sm text-muted-foreground">{section.description}</p>
+                </div>
+
+                <div className="space-y-2">
+                  {section.links.map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link.href}
+                      className="block text-sm text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             )
           })}
         </div>
@@ -157,33 +155,35 @@ export default function Documentation() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {popularDocs.map((doc, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg mb-2 group-hover:text-primary transition-colors">
-                        {doc.title}
-                      </CardTitle>
-                      <CardDescription className="mb-3">
-                        {doc.description}
-                      </CardDescription>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span className="px-2 py-1 bg-muted/50 rounded-full">{doc.category}</span>
-                        <span>{doc.readTime}</span>
-                      </div>
+              <div key={index} className="group p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300 cursor-pointer">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {doc.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      {doc.description}
+                    </p>
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="px-2 py-1 bg-muted/50 rounded-full">{doc.category}</span>
+                      <span>{doc.readTime}</span>
                     </div>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
-                </CardHeader>
-              </Card>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* CTA */}
         <div className="text-center">
-          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8">
+          <div className="relative overflow-hidden p-8 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-primary/10 opacity-100" />
+
+            {/* Content */}
+            <div className="relative z-10">
               <FileText className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Need Help Getting Started?
@@ -203,8 +203,8 @@ export default function Documentation() {
                   </a>
                 </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>

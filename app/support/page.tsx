@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Headphones, Mail, MessageCircle, Phone, Clock, User, FileText, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -113,28 +112,26 @@ ${formData.message}
               {supportOptions.map((option, index) => {
                 const Icon = option.icon
                 return (
-                  <Card key={index} className="group hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                          <Icon className={`w-6 h-6 ${option.color}`} />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-bold text-foreground mb-1">{option.title}</h3>
-                          <p className="text-sm text-muted-foreground mb-3">{option.description}</p>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                              <Clock className="w-3 h-3" />
-                              <span>Response: {option.response}</span>
-                            </div>
-                            <p className="text-xs text-muted-foreground">
-                              Best for: {option.best}
-                            </p>
+                  <div key={index} className="group p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center group-hover:border-primary/30 transition-colors">
+                        <Icon className={`w-6 h-6 ${option.color}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-foreground mb-1">{option.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-3">{option.description}</p>
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <Clock className="w-3 h-3" />
+                            <span>Response: {option.response}</span>
                           </div>
+                          <p className="text-xs text-muted-foreground">
+                            Best for: {option.best}
+                          </p>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 )
               })}
             </div>
@@ -158,18 +155,17 @@ ${formData.message}
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+              <div className="mb-6">
+                <h3 className="flex items-center gap-2 text-xl font-semibold mb-2">
                   <FileText className="w-5 h-5 text-primary" />
                   Contact Support
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-muted-foreground">
                   Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name *</Label>
@@ -264,28 +260,25 @@ ${formData.message}
                     Send Message
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
+            </div>
 
             {/* Direct Contact */}
-            <Card className="mt-6">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground">Direct Email</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Prefer email? Send us a message directly at{" "}
-                      <a href="mailto:hello@cleaniquecoders.com" className="text-primary hover:underline">
-                        hello@cleaniquecoders.com
-                      </a>
-                    </p>
-                  </div>
+            <div className="mt-6 p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-background/50 backdrop-blur-sm border border-border/50 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-primary" />
                 </div>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="font-bold text-foreground">Direct Email</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Prefer email? Send us a message directly at{" "}
+                    <a href="mailto:hello@cleaniquecoders.com" className="text-primary hover:underline">
+                      hello@cleaniquecoders.com
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

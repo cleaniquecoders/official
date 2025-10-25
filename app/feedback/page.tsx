@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { MessageSquare, Star, TrendingUp, Users, Send, Heart, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -128,18 +127,17 @@ ${formData.message}
         <div className="grid lg:grid-cols-3 gap-12">
           {/* Feedback Form */}
           <div className="lg:col-span-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+            <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-3xl">
+              <div className="mb-6">
+                <h3 className="flex items-center gap-2 text-xl font-semibold mb-2">
                   <Send className="w-5 h-5 text-primary" />
                   Submit Feedback
-                </CardTitle>
-                <CardDescription>
+                </h3>
+                <p className="text-muted-foreground">
                   Help us improve by sharing your thoughts, suggestions, or reporting issues.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Feedback Type */}
                   <div className="space-y-3">
                     <Label>Feedback Type *</Label>
@@ -280,18 +278,15 @@ ${formData.message}
                     Submit Feedback
                   </Button>
                 </form>
-              </CardContent>
-            </Card>
+            </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
             {/* Why Feedback Matters */}
-            <Card className="mb-6">
-              <CardHeader>
-                <CardTitle className="text-lg">Why Your Feedback Matters</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
+            <div className="mb-6 p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+              <h3 className="text-lg font-semibold mb-4">Why Your Feedback Matters</h3>
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <TrendingUp className="w-5 h-5 text-primary mt-0.5" />
                   <div>
@@ -313,16 +308,16 @@ ${formData.message}
                     <p className="text-sm text-muted-foreground">Every feedback helps us maintain high quality standards.</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             {/* Recent Feedback */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Recent Feedback</CardTitle>
-                <CardDescription>What others are saying</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
+            <div className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl">
+              <div className="mb-4">
+                <h3 className="text-lg font-semibold">Recent Feedback</h3>
+                <p className="text-muted-foreground text-sm">What others are saying</p>
+              </div>
+              <div className="space-y-4">
                 {recentFeedback.map((feedback, index) => {
                   const typeInfo = feedbackTypes.find(t => t.value === feedback.type)
                   const Icon = typeInfo?.icon || MessageSquare
@@ -338,8 +333,8 @@ ${formData.message}
                     </div>
                   )
                 })}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>

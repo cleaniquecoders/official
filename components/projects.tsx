@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, ArrowRight, Sparkles } from "lucide-react"
+import { ExternalLink, ArrowRight, Sparkles, X } from "lucide-react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 const featuredProjects = [
   {
@@ -33,41 +34,46 @@ const featuredProjects = [
 const otherProjects = [
   {
     name: "Hal Ehwal Pelajar",
-    description: "Student activity and approval system for institutions",
+    description: "Comprehensive student affairs management system providing streamlined activity registration, approval workflows, and administrative oversight for educational institutions.",
     category: "Education",
   },
   {
     name: "ePerak",
-    description: "Maintenance and support for state-level system",
+    description: "Enterprise-grade maintenance and support solution for Perak state government systems, ensuring reliable operations and enhanced citizen services delivery.",
     category: "Government",
   },
   {
     name: "Vulman",
-    description: "Vulnerability management system consolidating security findings",
+    description: "Advanced vulnerability management platform that consolidates security findings, prioritizes threats, and provides actionable remediation guidance for enterprise environments.",
     category: "Security",
   },
   {
     name: "Machine Analytics",
-    description: "IoT analytics proof-of-concept",
+    description: "Innovative IoT analytics platform demonstrating real-time data processing, predictive maintenance capabilities, and intelligent insights for industrial applications.",
     category: "Analytics",
   },
   {
     name: "PantangPlus",
-    description: "Service booking platform for postpartum care",
+    description: "Digital healthcare platform specializing in postpartum care services, enabling seamless booking, provider matching, and comprehensive maternal wellness support.",
     category: "Healthcare",
   },
   {
     name: "Connective Exchange",
-    description: "API for WooCommerce performance optimization",
+    description: "High-performance API solution designed to optimize WooCommerce operations, reduce load times, and enhance e-commerce platform scalability for enterprise clients.",
     category: "E-commerce",
   }
 ]
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  // Show only first 3 featured projects initially
+  const visibleFeaturedProjects = featuredProjects.slice(0, 3)
+  const remainingFeaturedProjects = featuredProjects.slice(3)
 
   return (
-    <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section id="projects" className="px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -88,7 +94,7 @@ export default function Projects() {
 
         {/* Featured Projects */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
-          {featuredProjects.map((project, index) => (
+          {visibleFeaturedProjects.map((project, index) => (
             <div
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
@@ -132,7 +138,7 @@ export default function Projects() {
                 </div>
 
                 {/* Stats */}
-                <div className="flex gap-6 mb-6 text-sm">
+                <div className="flex gap-6 text-sm">
                   {Object.entries(project.stats).map(([key, value]) => (
                     <div key={key}>
                       <div className="font-bold text-foreground">{value}</div>
@@ -141,45 +147,56 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* CTA */}
-                <div className={`flex items-center gap-2 text-primary font-medium transition-all duration-300 ${
-                  hoveredIndex === index ? "translate-x-2" : ""
-                }`}>
-                  <span>View case study</span>
-                  <ExternalLink className="w-4 h-4" />
-                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Other Projects Grid */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-foreground mb-8 text-center">
-            More Projects
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
-              <div
-                key={index}
-                className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer"
+        <div>
+
+          {/* More Projects Button */}
+          <div className="text-center">
+            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+              <DialogTrigger asChild>
+                <button className="group px-6 py-3 bg-accent/10 border border-accent/20 text-accent rounded-xl hover:bg-accent/20 hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2 mx-auto">
+                  View More Projects ({otherProjects.length})
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </DialogTrigger>
+              <DialogContent
+                className="w-[90vw]! max-w-6xl! max-h-[85vh] overflow-y-auto sm:max-w-6xl! md:max-w-6xl! lg:max-w-6xl!"
+                style={{ width: '90vw', maxWidth: '72rem' }}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <h4 className="text-lg font-semibold text-foreground">
-                    {project.name}
-                  </h4>
-                  <span className="px-2 py-1 text-xs font-medium rounded-lg bg-accent/10 text-accent">
-                    {project.category}
-                  </span>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-center mb-6">
+                    Additional Projects
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {otherProjects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="p-6 bg-background/50 backdrop-blur-sm border border-border rounded-2xl transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:scale-[1.02] cursor-pointer"
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <h4 className="text-lg font-semibold text-foreground">
+                          {project.name}
+                        </h4>
+                        <span className="px-2 py-1 text-xs font-medium rounded-lg bg-accent/10 text-accent">
+                          {project.category}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground text-sm">{project.description}</p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-muted-foreground text-sm">{project.description}</p>
-              </div>
-            ))}
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-muted-foreground mb-6">
             Ready to build your next successful project with us?
           </p>
@@ -187,7 +204,7 @@ export default function Projects() {
             Start Your Project
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   )

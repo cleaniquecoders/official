@@ -6,56 +6,56 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 
 const featuredProjects = [
   {
-    name: "National Medical Research Register",
-    description: "A comprehensive research management platform for Malaysia's Ministry of Health, enabling researchers to register, track, and manage medical research projects nationwide.",
-    category: "Healthcare",
-    tags: ["Government", "Research", "Healthcare"],
+    name: "API Management System (APIM)",
+    description: "APIM is a web-based platform for registering, managing, securing, monitoring, and publishing APIs. It streamlines integration across systems while enforcing access control, audit trails, and user roles in line with OpenAPI standards.",
+    category: "API Platform",
+    tags: ["APIs", "Security", "OpenAPI"],
     image: "/placeholder-project-1.jpg",
-    stats: { users: "10K+", projects: "500+" }
+    stats: { api: "500+", integrations: "100+" }
   },
   {
-    name: "SumberManusia",
-    description: "A comprehensive SaaS HR management system featuring employee self-service portals, automated payroll processing, and advanced workforce analytics.",
-    category: "SaaS",
-    tags: ["HR", "SaaS", "Automation"],
+    name: "Identity Access Management (IAM)",
+    description: "Identity and Access Management (IAM) is a framework of policies and technologies that ensures the right individuals access the right resources at the right times for the right reasons. It manages user identities, authentication, authorisation, and access control within an organisation.",
+    category: "Security",
+    tags: ["Identity", "Security", "Access Control"],
     image: "/placeholder-project-2.jpg",
-    stats: { companies: "50+", employees: "5K+" }
+    stats: { users: "30K+", policies: "200+" }
   },
   {
     name: "Staff E-Services",
-    description: "Universiti Malaya's integrated HR management platform providing seamless employee services, from recruitment to retirement.",
+    description: "Staff e-Services is one stop centre for Human Resources related modules such as Leave application, Recruitment, Retirement and few other HR related modules for Universiti Malaya (UM). The system is already live in production in 2022 and has more modules and features undergoing development.",
     category: "Education",
-    tags: ["University", "HR", "Integration"],
+    tags: ["University", "HR", "Production"],
     image: "/placeholder-project-3.jpg",
-    stats: { staff: "8K+", services: "20+" }
+    stats: { staff: "8K+", modules: "15+" }
   }
 ]
 
 const otherProjects = [
+  {
+    name: "National Medical Research Register",
+    description: "The NMRR is the web based tool designed to support the implementation of the National Institute of Health NIH guideline on the conduct of research in the Ministry of Health Malaysia (MOH).",
+    category: "Healthcare",
+  },
   {
     name: "Hal Ehwal Pelajar",
     description: "Comprehensive student affairs management system providing streamlined activity registration, approval workflows, and administrative oversight for educational institutions.",
     category: "Education",
   },
   {
-    name: "ePerak",
-    description: "Enterprise-grade maintenance and support solution for Perak state government systems, ensuring reliable operations and enhanced citizen services delivery.",
+    name: "Career Portal",
+    description: "It's an official Universiti Malaya career portal for employees and the public to apply for available vacancies. The system is integrated with Universiti Malaya Staff E-Services system. The Career Portal is already in production in 2022.",
+    category: "Education",
+  },
+  {
+    name: "Land Document Management System",
+    description: "The system enables the Pejabat Daerah dan Tanah to manage and monitor land-related documents by generating QR codes for tracking. It facilitates document movement tracking, ensuring quick and accurate identification of the current holder and location of each document.",
     category: "Government",
   },
   {
     name: "Vulman",
     description: "Advanced vulnerability management platform that consolidates security findings, prioritizes threats, and provides actionable remediation guidance for enterprise environments.",
     category: "Security",
-  },
-  {
-    name: "Machine Analytics",
-    description: "Innovative IoT analytics platform demonstrating real-time data processing, predictive maintenance capabilities, and intelligent insights for industrial applications.",
-    category: "Analytics",
-  },
-  {
-    name: "PantangPlus",
-    description: "Digital healthcare platform specializing in postpartum care services, enabling seamless booking, provider matching, and comprehensive maternal wellness support.",
-    category: "Healthcare",
   },
   {
     name: "Connective Exchange",

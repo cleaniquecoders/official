@@ -112,7 +112,7 @@ export default function Services() {
                   </p>
 
                   {/* Features */}
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2 ">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
@@ -120,14 +120,6 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-
-                  {/* CTA */}
-                  <div className={`flex items-center gap-2 text-primary font-medium transition-all duration-300 ${
-                    hoveredIndex === index ? "translate-x-2" : ""
-                  }`}>
-                    <span>Learn more</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
                 </div>
               </div>
             )
@@ -141,10 +133,10 @@ export default function Services() {
           </p>
           <a
             href="mailto:hello@cleaniquecoders.com?subject=Get%20Started%20Today%20-%20Services%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20ready%20to%20transform%20my%20business%20with%20your%20comprehensive%20IT%20solutions.%20I'm%20particularly%20interested%20in%3A%0A%0AServices%20needed%3A%0A-%20System%20Development%0A-%20Solution%20Architecture%0A-%20Code%20Assessment%0A-%20Developer%20Training%0A-%20Project%20Migration%0A-%20Technical%20Writing%0A-%20Other%3A%20%0A%0ACould%20we%20schedule%20a%20consultation%20to%20discuss%20my%20requirements%3F%0A%0AThank%20you%21"
-            className="group px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-2 mx-auto"
+            className="group px-6 py-2.5 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 font-semibold inline-flex items-center gap-2"
           >
             Get Started Today
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
       </div>

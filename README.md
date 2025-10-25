@@ -28,6 +28,7 @@ We offer a wide range of services that cater to your technology and business req
 ## 🎓 Training Programs
 
 At CCR, we aim to empower developers at all levels. Our training programs include:
+
 - **👨‍🏫 Bootcamp**: Comprehensive training from the ground up.
 - **🧑‍💻 Coaching**: Tailored coaching to help developers solve real-world problems.
 - **🤝 Mentoring**: Long-term mentorship for gradual, steady improvement in software development skills.
@@ -55,5 +56,5 @@ Here are some of the notable projects we have undertaken:
 
 For more information or to discuss potential collaborations, feel free to reach out to us at:
 
-**📧 Email**: hello@cleaniquecoders.com
+**📧 Email**: <hello@cleaniquecoders.com>
 **🌐 Website**: [cleaniquecoders.com](https://cleaniquecoders.com)

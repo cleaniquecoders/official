@@ -172,7 +172,7 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             {/* Copyright */}
             <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
-              <p>&copy; 2025 Cleanique Coders Resources. All rights reserved.</p>
+              <p>&copy; 2025 Cleanique Coders Resources - 201603028084 (002507773-X). All rights reserved.</p>
             </div>
 
             {/* Legal links */}

@@ -202,7 +202,7 @@ export default function Training() {
           </p>
           <a
             href="mailto:hello@cleaniquecoders.com?subject=Start%20Learning%20Today%20-%20Training%20Inquiry&body=Hi%20Cleanique%20Coders%20team%2C%0A%0AI'm%20ready%20to%20accelerate%20my%20development%20career%20with%20your%20training%20programs.%20I'm%20interested%20in%3A%0A%0ATraining%20areas%3A%0A-%20Laravel%20Development%0A-%20Vue.js%20%26%20Frontend%0A-%20API%20Development%0A-%20System%20Architecture%0A-%20DevOps%20%26%20Deployment%0A-%20Code%20Quality%20%26%20Testing%0A-%20Other%3A%20%0A%0ATraining%20format%20preference%3A%0A-%20Corporate%20training%0A-%20Individual%20mentoring%0A-%20Workshop%20format%0A%0ACould%20you%20provide%20more%20details%20about%20your%20training%20programs%3F%0A%0AThank%20you%21"
-            className="group px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg flex items-center justify-center gap-2 mx-auto"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 font-semibold text-lg"
           >
             Start Learning Today
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

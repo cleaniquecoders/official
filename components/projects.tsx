@@ -73,7 +73,7 @@ export default function Projects() {
   const remainingFeaturedProjects = featuredProjects.slice(3)
 
   return (
-    <section id="projects" className="px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section id="projects" className="min-h-screen flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">

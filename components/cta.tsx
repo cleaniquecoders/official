@@ -4,7 +4,7 @@ import { ArrowRight, Calendar, MessageCircle, Star } from "lucide-react"
 
 export default function CTA() {
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-background via-primary/5 to-background">
+    <section id="cta" className="min-h-screen flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-background via-primary/5 to-background">
       <div className="max-w-7xl mx-auto">
         {/* Main CTA */}
         <div className="relative overflow-hidden">

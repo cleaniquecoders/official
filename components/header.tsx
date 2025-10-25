@@ -38,6 +38,19 @@ export default function Header() {
     { name: "About", href: "#about" }
   ]
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const target = document.querySelector(href)
+    if (target) {
+      const headerHeight = 80 // Approximate header height
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled
@@ -47,9 +60,26 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
+          {/* Mobile Logo */}
+          <div className="sm:hidden">
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, '#hero')}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <span className="font-semibold text-lg text-foreground">CCR</span>
+            </a>
+          </div>
+          {/* Desktop Logo */}
           <div className="hidden sm:block">
-            <span className="font-semibold text-xl text-foreground">Cleanique Coders</span>
-            <div className="text-xs text-muted-foreground -mt-1">Since 2016</div>
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, '#hero')}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <span className="font-semibold text-xl text-foreground">Cleanique Coders</span>
+              <div className="text-xs text-muted-foreground -mt-1">Since 2016</div>
+            </a>
           </div>
         </div>
 
@@ -59,6 +89,7 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-muted-foreground hover:text-foreground transition-colors font-medium relative group"
             >
               {item.name}
@@ -113,8 +144,11 @@ export default function Header() {
                   <a
                     key={item.name}
                     href={item.href}
+                    onClick={(e) => {
+                      handleNavClick(e, item.href)
+                      setIsOpen(false)
+                    }}
                     className="text-muted-foreground hover:text-foreground transition-colors font-medium py-2 border-b border-border/50 last:border-b-0"
-                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </a>

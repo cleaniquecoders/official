@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Light theme (default) - Cleanique Blue with 2026 Trends */
 :root {
   /* Restored vibrant blue from Cleanique logo as primary */

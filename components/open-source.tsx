@@ -125,7 +125,7 @@ export default function OpenSource() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="open-source" className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="open-source" className="min-h-screen flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">

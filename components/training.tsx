@@ -67,7 +67,7 @@ export default function Training() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="training" className="py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section id="training" className="min-h-screen flex items-center justify-center py-32 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
